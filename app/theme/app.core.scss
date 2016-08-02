@@ -1,0 +1,41 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Shared Imports
+// --------------------------------------------------
+// These are the imports which make up the design of this app.
+// By default each design mode includes these shared imports.
+// App Shared Sass variables belong in app.variables.scss.
+
+@import "app.flex";
+
+@import "buttons";
+
+@import "../pages/about/about";
+
+@import "../pages/contact/contact";
+
+@import "../pages/home/home";
+
+@import "../pages/sun/sun";
+
+@import "../pages/settings/settings.scss";
+
+body {
+    font-family: "LDFComicSans";
+    font-weight: bold;
+}
+
+ion-content {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f0f9ff+0,cbebff+47,a1dbff+100;Blue+3D+%2313 */
+    background: #f0f9ff; /* Old browsers */
+    background: -moz-linear-gradient(to bottom,  #d0ffff 0%, #cbebff 57%, #a1dbff 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(to bottom,  #d0ffff 0%,#cbebff 57%,#a1dbff 100%); /* Chrome10-25,Safari5.1-6 */  /* For Opera 11.1 to 12.0 */
+    background: -o-linear-gradient(to bottom,  #d0ffff 0%,#cbebff 57%,#a1dbff 100%);
+    background: linear-gradient(to bottom,  #f0f9ff 0%,#cbebff 57%,#a1dbff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f9ff', endColorstr='#a1dbff',GradientType=0 ); /* IE6-9 */
+}
+
+scroll-content {
+    overflow-y: auto;
+}
