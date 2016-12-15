@@ -2,10 +2,33 @@
 	display:inline-block;
 	cursor:pointer;
 	color:$button-text-color;
-	font-size:20px;
-	font-weight:bold;
 	text-decoration:none;
 	text-shadow:0px 1px 0px $button-text-color;
     background: url(http://th07.deviantart.net/fs70/150/i/2013/012/c/6/rock_01_png___by_alzstock-d5r84up.png) no-repeat;
     background-size: 100% 100%; 
+	font-weight: bolder;
+	font-size: inherit;
+}
+
+.toggle-inner {
+	width: 30px !important;
+	height: 30px !important;
+}
+
+.toggle-icon {
+	width: 46px;
+    height: 24px;
+}
+
+ion-item.item {
+	font-size:inherit;
+	font-weight:inherit;
+	text-transform: uppercase;
+	font-family: inherit;
+	background-color: transparent;
+	padding: 20px;
+}
+
+.item .item-inner {
+	border-bottom: none;
 }

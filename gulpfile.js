@@ -38,10 +38,11 @@ var isRelease = argv.indexOf('--release') > -1;
 
 gulp.task('watch', ['clean'], function(done){
   runSequence(
-    ['sass', 'html', 'fonts', 'copyfonts', 'scripts'],
+    ['sass', 'html', 'fonts', 'copyfonts','copyresources', 'scripts'],
     function(){
       gulpWatch('app/**/*.scss', function(){ gulp.start('sass'); });
       gulpWatch('app/**/*.html', function(){ gulp.start('html'); });
+      gulpWatch('app/**/*.json', function(){ gulp.start('copyresources'); });
       buildBrowserify({ watch: true }).on('end', done);
     }
   );
@@ -49,7 +50,7 @@ gulp.task('watch', ['clean'], function(done){
 
 gulp.task('build', ['clean'], function(done){
   runSequence(
-    ['sass', 'html', 'fonts', 'copyfonts', 'scripts'],
+    ['sass', 'html', 'fonts', 'copyfonts','copyresources', 'scripts'],
     function(){
       buildBrowserify({
         minify: isRelease,
@@ -67,6 +68,11 @@ gulp.task('build', ['clean'], function(done){
 gulp.task('copyfonts', function() {
    gulp.src('./app/theme/fonts/*.{ttf,woff,eof,svg}')
    .pipe(gulp.dest('./www/build/fonts'));
+});
+
+gulp.task('copyresources', function() {
+   gulp.src('./app/assets/**/*.*')
+   .pipe(gulp.dest('./www/assets'));
 });
 
 gulp.task('sass', buildSass);
